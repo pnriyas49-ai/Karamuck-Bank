@@ -2,6 +2,8 @@ import { getCollection } from '@/lib/data-reader';
 import GenericForm from '@/components/admin/GenericForm';
 import { notFound } from 'next/navigation';
 
+export const runtime = 'edge';
+
 
 
 export default async function EditFacilityPage({ params }: { params: { slug: string } }) {
