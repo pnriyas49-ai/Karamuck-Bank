@@ -2,7 +2,7 @@ import { getCollection } from '@/lib/data-reader';
 import GenericForm from '@/components/admin/GenericForm';
 import { notFound } from 'next/navigation';
 
-export const dynamic = 'force-dynamic';
+
 
 export default async function EditNewsPage({ params }: { params: { slug: string } }) {
   const newsList = getCollection('news');

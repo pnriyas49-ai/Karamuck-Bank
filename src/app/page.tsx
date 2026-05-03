@@ -3,7 +3,7 @@ import { FloatingServices } from "@/components/FloatingServices";
 import { EmiCalculator } from "@/components/EmiCalculator";
 import { getSingleton, getCollection } from '@/lib/data-reader';
 
-export const dynamic = 'force-dynamic';
+
 
 export default function Home() {
   const homepageData = getSingleton('homepage') || {};

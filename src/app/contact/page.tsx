@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getSingleton } from "@/lib/data-reader";
 
-export const dynamic = 'force-dynamic';
+
 
 export default function ContactPage() {
   const data = getSingleton('contact') || {};

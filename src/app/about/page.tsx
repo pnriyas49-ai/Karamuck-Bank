@@ -2,7 +2,7 @@ import React from "react";
 import { Target, Heart, Users, Award } from "lucide-react";
 import { getSingleton } from "@/lib/data-reader";
 
-export const dynamic = 'force-dynamic';
+
 
 export default function AboutPage() {
   const data = getSingleton('about') || {};

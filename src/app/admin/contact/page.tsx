@@ -1,7 +1,7 @@
 import { getSingleton } from '@/lib/data-reader';
 import GenericForm from '@/components/admin/GenericForm';
 
-export const dynamic = 'force-dynamic';
+
 
 export default async function ContactAdmin() {
   const data = getSingleton('contact') || {};

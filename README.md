@@ -29,8 +29,23 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deployment (Cloudflare Pages)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is optimized for Cloudflare Pages using `@cloudflare/next-on-pages`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Build Settings
+- **Build command:** `npx @cloudflare/next-on-pages@1`
+- **Build output directory:** `.vercel/output/static`
+
+### Required Environment Variables
+For the Admin CMS to function in production, you must set these variables in the Cloudflare Dashboard:
+- `GITHUB_TOKEN`: Your GitHub Personal Access Token
+- `GITHUB_OWNER`: Your GitHub Username
+- `GITHUB_REPO`: `Karamuck-Bank`
+- `GITHUB_BRANCH`: `main`
+
+### Deployment Workflow
+1. Commit and push your changes to GitHub.
+2. Cloudflare Pages will automatically trigger a build.
+3. Once deployed, the Admin panel will allow you to update content, which then commits back to GitHub and triggers a fresh build.
+

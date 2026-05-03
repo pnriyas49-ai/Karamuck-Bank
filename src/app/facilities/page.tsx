@@ -2,7 +2,7 @@ import React from "react";
 import { Shield, TrendingUp, Smartphone, Landmark, Lock, HandCoins } from "lucide-react";
 import { getCollection } from "@/lib/data-reader";
 
-export const dynamic = 'force-dynamic';
+
 
 export default function FacilitiesPage() {
   const facilitiesData = getCollection('facilities') || [];

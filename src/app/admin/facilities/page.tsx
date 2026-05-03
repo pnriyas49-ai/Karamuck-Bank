@@ -3,7 +3,7 @@ import GenericForm from '@/components/admin/GenericForm';
 import Link from 'next/link';
 import { DeleteButton } from '@/components/admin/DeleteButton';
 
-export const dynamic = 'force-dynamic';
+
 
 export default async function FacilitiesAdmin() {
   const facilities = getCollection('facilities');

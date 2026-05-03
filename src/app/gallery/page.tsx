@@ -1,7 +1,7 @@
 import React from "react";
 import { getSingleton } from "@/lib/data-reader";
 
-export const dynamic = 'force-dynamic';
+
 
 export default function GalleryPage() {
   const data = getSingleton('photoGallery') || {};
