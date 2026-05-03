@@ -2,8 +2,6 @@ import React from "react";
 import { Shield, TrendingUp, Smartphone, Landmark, Lock, HandCoins } from "lucide-react";
 import { getCollection } from "@/lib/data-reader";
 
-
-
 export default function FacilitiesPage() {
   const facilitiesData = getCollection('facilities') || [];
 
@@ -38,29 +36,29 @@ export default function FacilitiesPage() {
   };
 
   return (
-    <main className="min-h-screen pt-32 sm:pt-40 pb-12 bg-background flex flex-col relative overflow-hidden">
-      <div className="absolute top-1/2 left-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-accent/8 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
-      <div className="absolute top-0 right-0 w-[200px] sm:w-[300px] h-[200px] sm:h-[300px] bg-gold/8 rounded-full blur-[100px] pointer-events-none" />
+    <main className="min-h-screen pt-24 sm:pt-32 md:pt-40 pb-12 sm:pb-16 bg-background flex flex-col relative overflow-hidden">
+      <div className="absolute top-1/2 left-0 w-[250px] sm:w-[400px] md:w-[500px] h-[250px] sm:h-[400px] md:h-[500px] bg-accent/8 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
+      <div className="absolute top-0 right-0 w-[150px] sm:w-[250px] md:w-[300px] h-[150px] sm:h-[250px] md:h-[300px] bg-gold/8 rounded-full blur-[100px] pointer-events-none" />
       
-      <div className="container mx-auto px-4 sm:px-6 relative z-10 mt-8 sm:mt-12">
-        <div className="mb-8 sm:mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-foreground mb-4 sm:mb-6">Our Facilities</h1>
-          <div className="h-1 w-20 bg-gradient-to-r from-primary via-gold to-accent rounded-full" />
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8 relative z-10 mt-6 sm:mt-10 md:mt-12">
+        <div className="mb-8 sm:mb-10 md:mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6">Our Facilities</h1>
+          <div className="h-1 w-16 sm:w-20 bg-gradient-to-r from-primary via-gold to-accent rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
           {renderFacilities.map((fac: any, i: number) => (
             <div
               key={fac.title + i}
-              className="glass-panel p-6 sm:p-8 rounded-2xl sm:rounded-3xl hover:scale-[1.03] transition-all duration-300 cursor-default group"
+              className="glass-panel p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl md:rounded-3xl hover:scale-[1.03] transition-all duration-300 cursor-default group"
             >
-              <div className={`p-3 bg-foreground/5 rounded-xl w-fit mb-4 border border-foreground/10 group-hover:bg-foreground/10 transition-colors ${fac.colorClass || ''}`}>
-                {getIcon(fac.iconName, "w-6 h-6")}
+              <div className={`p-2.5 sm:p-3 bg-foreground/5 rounded-lg sm:rounded-xl w-fit mb-3 sm:mb-4 border border-foreground/10 group-hover:bg-foreground/10 transition-colors ${fac.colorClass || ''}`}>
+                {getIcon(fac.iconName, "w-5 h-5 sm:w-6 sm:h-6")}
               </div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-foreground group-hover:text-primary transition-colors">{fac.title}</h3>
-              <p className="text-foreground/70 text-sm sm:text-base">{fac.desc}</p>
+              <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1.5 sm:mb-2 md:mb-3 text-foreground group-hover:text-primary transition-colors">{fac.title}</h3>
+              <p className="text-foreground/70 text-sm sm:text-base leading-relaxed">{fac.desc}</p>
               {fac.image && (
-                 <div className="mt-4 rounded-xl overflow-hidden h-32">
+                 <div className="mt-3 sm:mt-4 rounded-lg sm:rounded-xl overflow-hidden h-28 sm:h-32">
                    {/* eslint-disable-next-line @next/next/no-img-element */}
                    <img src={fac.image} alt={fac.title} className="w-full h-full object-cover" />
                  </div>

@@ -99,11 +99,14 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    @apply font-sans antialiased scroll-smooth;
+    overflow-x: hidden;
+  }
   body {
     @apply bg-background text-foreground transition-colors duration-300;
-  }
-  html {
-    @apply font-sans antialiased;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
   }
 }
 

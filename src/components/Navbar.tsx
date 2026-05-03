@@ -45,7 +45,7 @@ export function Navbar() {
           : "bg-transparent py-4"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
+      <div className="container mx-auto px-3 sm:px-5 md:px-8 lg:px-12 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group cursor-pointer shrink-0">
           <Image
@@ -53,7 +53,7 @@ export function Navbar() {
             alt="Karamuck Service Co-operative Bank"
             width={180}
             height={55}
-            className="h-10 sm:h-12 md:h-14 w-auto transition-transform duration-300 group-hover:scale-105"
+            className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto transition-transform duration-300 group-hover:scale-105"
             priority
           />
         </Link>
