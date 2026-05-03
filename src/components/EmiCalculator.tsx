@@ -66,7 +66,7 @@ export function EmiCalculator() {
                   max={5000000}
                   step={10000}
                   value={[amount]}
-                  onValueChange={(val) => setAmount(val[0])}
+                  onValueChange={(val) => setAmount(Array.isArray(val) ? val[0] : val)}
                   className="[&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary"
                 />
                 <div className="flex justify-between text-xs text-foreground/40">
@@ -86,7 +86,7 @@ export function EmiCalculator() {
                   max={120}
                   step={6}
                   value={[tenure]}
-                  onValueChange={(val) => setTenure(val[0])}
+                  onValueChange={(val) => setTenure(Array.isArray(val) ? val[0] : val)}
                   className="[&_[role=slider]]:bg-accent [&_[role=slider]]:border-accent"
                 />
                 <div className="flex justify-between text-xs text-foreground/40">
@@ -106,7 +106,7 @@ export function EmiCalculator() {
                   max={20}
                   step={0.1}
                   value={[interest]}
-                  onValueChange={(val) => setInterest(val[0])}
+                  onValueChange={(val) => setInterest(Array.isArray(val) ? val[0] : val)}
                   className="[&_[role=slider]]:bg-gold [&_[role=slider]]:border-gold"
                 />
                 <div className="flex justify-between text-xs text-foreground/40">
