@@ -1,6 +1,8 @@
 import { getCollection } from '@/lib/data-reader';
 import GenericForm from '@/components/admin/GenericForm';
 import { notFound } from 'next/navigation';
+
+export const runtime = 'edge';
 export const dynamicParams = false;
 
 export function generateStaticParams() {
