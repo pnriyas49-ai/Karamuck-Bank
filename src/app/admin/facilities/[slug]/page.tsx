@@ -3,14 +3,6 @@ import GenericForm from '@/components/admin/GenericForm';
 import { notFound } from 'next/navigation';
 
 export const runtime = 'edge';
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  const facilities = getCollection('facilities');
-  return facilities.map((item: any) => ({
-    slug: item.slug,
-  }));
-}
 
 export default async function EditFacilityPage({ params }: { params: { slug: string } }) {
   const facilities = getCollection('facilities');
