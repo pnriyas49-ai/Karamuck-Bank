@@ -14,7 +14,7 @@ export default async function PhotosAdmin() {
         type="singleton"
         initialData={data}
         fields={[
-          { name: 'heroImage', label: 'Hero Banner Image', type: 'image' },
+          { name: 'heroImages', label: 'Hero Banner Images (Carousel)', type: 'imageArray' },
           { name: 'images', label: 'Gallery Images', type: 'imageArray' },
         ]}
       />

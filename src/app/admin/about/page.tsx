@@ -14,7 +14,7 @@ export default async function AboutAdmin() {
         type="singleton"
         initialData={data}
         fields={[
-          { name: 'heroImage', label: 'Hero Banner Image', type: 'image' },
+          { name: 'heroImages', label: 'Hero Banner Images (Carousel)', type: 'imageArray' },
           { name: 'visionTitle', label: 'Vision Title', type: 'text' },
           { name: 'visionText', label: 'Vision Description', type: 'textarea' },
           { name: 'missionTitle', label: 'Mission Title', type: 'text' },

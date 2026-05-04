@@ -96,19 +96,20 @@ export default function PageBackground({
         )}
       </motion.div>
 
-      {/* Overlay — uses Karamuck's dark green-charcoal tones */}
+      {/* Overlay — ensures white text is always readable over any hero image */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
           background: `linear-gradient(to bottom,
-            rgba(15, 30, 20, ${overlayOpacity * 0.85}) 0%,
-            rgba(15, 30, 20, ${overlayOpacity * 0.45}) 50%,
-            rgba(15, 30, 20, ${overlayOpacity * 0.92}) 100%)`,
+            rgba(10, 20, 15, ${overlayOpacity * 0.85}) 0%,
+            rgba(10, 20, 15, ${overlayOpacity * 0.55}) 40%,
+            rgba(10, 20, 15, ${overlayOpacity * 0.5}) 60%,
+            rgba(10, 20, 15, ${overlayOpacity * 0.9}) 100%)`,
           backdropFilter: `blur(${blurAmount})`,
           WebkitBackdropFilter: `blur(${blurAmount})`,
         }}
       />
-      <div className="absolute inset-0 z-20 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.2)_100%)]" />
+      <div className="absolute inset-0 z-20 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.15)_100%)]" />
     </div>
   );
 }

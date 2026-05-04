@@ -12,6 +12,7 @@ export default function ContactPage() {
         title="Contact Us"
         subtitle="Get in touch with us"
         heroImage={data.heroImage}
+        heroImages={data.heroImages}
       />
 
       <div className="container mx-auto px-5 sm:px-6 lg:px-8 relative z-10 py-8 sm:py-12 md:py-16 max-w-5xl">

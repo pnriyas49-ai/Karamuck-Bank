@@ -12,17 +12,20 @@ interface PageHeroProps {
   title: string;
   subtitle?: string;
   heroImage?: string;
+  heroImages?: string[];
 }
 
-export default function PageHero({ title, subtitle, heroImage }: PageHeroProps) {
+export default function PageHero({ title, subtitle, heroImage, heroImages = [] }: PageHeroProps) {
+  const images = heroImages.length > 0 ? heroImages : (heroImage ? [heroImage] : []);
+  
   return (
-    <section className="relative min-h-[50vh] flex items-center overflow-hidden" style={{ paddingTop: '72px' }}>
-      <PageBackground imageUrl={heroImage} overlayOpacity={0.7} blurAmount="3px" />
-      {/* Fallback gradient when no hero image */}
-      {!heroImage && (
+    <section className="relative min-h-[60vh] flex items-center overflow-hidden" style={{ paddingTop: '72px' }}>
+      <PageBackground imageUrls={images} overlayOpacity={0.55} blurAmount="1px" />
+      {/* Fallback gradient when no hero images */}
+      {images.length === 0 && (
         <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-accent/60 to-background" />
       )}
-      <div className="container mx-auto px-5 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-24">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8 relative z-30 py-16 sm:py-24">
         <motion.div
           initial="hidden"
           animate="show"
@@ -31,15 +34,15 @@ export default function PageHero({ title, subtitle, heroImage }: PageHeroProps) 
         >
           <motion.h1
             variants={fadeUp}
-            className="font-bold text-white leading-tight"
-            style={{ fontSize: 'clamp(2.5rem, 5vw + 1rem, 4.5rem)' }}
+            className="font-bold text-white leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
+            style={{ fontSize: 'clamp(2.5rem, 5vw + 1rem, 4.5rem)', textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}
           >
             {title}
           </motion.h1>
           {subtitle && (
             <motion.p
               variants={fadeUp}
-              className="mt-4 text-white/70 text-base sm:text-lg md:text-xl"
+              className="mt-4 text-white/80 text-base sm:text-lg md:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]"
             >
               {subtitle}
             </motion.p>

@@ -17,6 +17,7 @@ export default function AboutPage() {
         title="Our Legacy"
         subtitle="Karamuck Service Co-operative Bank"
         heroImage={data.heroImage}
+        heroImages={data.heroImages}
       />
 
       <div className="container mx-auto px-5 sm:px-6 lg:px-8 relative z-10 py-8 sm:py-12 md:py-16">

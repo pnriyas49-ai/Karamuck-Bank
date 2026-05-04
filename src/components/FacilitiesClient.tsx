@@ -35,13 +35,13 @@ export default function FacilitiesClient({ data }: { data: FacilitiesData }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* ═══ HERO ═══ */}
-      <section className="relative min-h-[50vh] flex items-center overflow-hidden" style={{ paddingTop: '72px' }}>
-        <PageBackground imageUrl={data.heroImage} overlayOpacity={0.7} blurAmount="3px" />
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden" style={{ paddingTop: '72px' }}>
+        <PageBackground imageUrls={data.heroImage ? [data.heroImage] : []} overlayOpacity={0.55} blurAmount="1px" />
         {/* Fallback gradient if no hero image */}
-        {!data.heroImage && (
+        {(!data.heroImage) && (
           <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-accent/60 to-background" />
         )}
-        <div className="container mx-auto px-5 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-24">
+        <div className="container mx-auto px-5 sm:px-6 lg:px-8 relative z-30 py-16 sm:py-24">
           <motion.div
             initial="hidden"
             animate="show"
@@ -50,8 +50,8 @@ export default function FacilitiesClient({ data }: { data: FacilitiesData }) {
           >
             <motion.h1
               variants={fadeUp}
-              className="font-bold text-white leading-tight"
-              style={{ fontSize: 'clamp(2.5rem, 5vw + 1rem, 4.5rem)' }}
+              className="font-bold text-white leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
+              style={{ fontSize: 'clamp(2.5rem, 5vw + 1rem, 4.5rem)', textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}
             >
               {t('Our Facilities', 'സൗകര്യങ്ങൾ')}
             </motion.h1>

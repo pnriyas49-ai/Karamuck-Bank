@@ -21,6 +21,7 @@ export default function NewsPage() {
         title="News & Updates"
         subtitle="Stay informed with the latest from Karamuck Bank"
         heroImage={settings.heroImage}
+        heroImages={settings.heroImages}
       />
 
       <div className="container mx-auto px-5 sm:px-6 lg:px-8 relative z-10 py-8 sm:py-12 md:py-16 max-w-4xl">

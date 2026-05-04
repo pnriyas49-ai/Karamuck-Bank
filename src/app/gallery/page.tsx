@@ -21,6 +21,7 @@ export default function GalleryPage() {
         title="Photo Gallery"
         subtitle="Capturing the life of Karamuck Bank"
         heroImage={data.heroImage}
+        heroImages={data.heroImages}
       />
 
       <div className="container mx-auto px-5 sm:px-6 lg:px-8 relative z-10 py-8 sm:py-12 md:py-16">
