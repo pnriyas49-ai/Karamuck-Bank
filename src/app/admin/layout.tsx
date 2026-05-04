@@ -7,6 +7,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { name: 'About Page', href: '/admin/about' },
     { name: 'Facilities', href: '/admin/facilities' },
     { name: 'News', href: '/admin/news' },
+    { name: 'News Settings', href: '/admin/news-settings' },
     { name: 'Photo Gallery', href: '/admin/photos' },
     { name: 'Contact Page', href: '/admin/contact' },
   ];

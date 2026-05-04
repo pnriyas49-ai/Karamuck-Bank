@@ -1,10 +1,14 @@
 import { getCollection } from '@/lib/data-reader';
 import GenericForm from '@/components/admin/GenericForm';
 import { notFound } from 'next/navigation';
+export const dynamicParams = false;
 
-export const runtime = 'edge';
-
-
+export function generateStaticParams() {
+  const newsList = getCollection('news');
+  return newsList.map((item: any) => ({
+    slug: item.slug,
+  }));
+}
 
 export default async function EditNewsPage({ params }: { params: { slug: string } }) {
   const newsList = getCollection('news');

@@ -1,8 +1,10 @@
 import React from "react";
-import { getCollection } from "@/lib/data-reader";
+import { getCollection, getSingleton } from "@/lib/data-reader";
+import PageHero from "@/components/PageHero";
 
 export default function NewsPage() {
   const newsData = getCollection('news') || [];
+  const settings = getSingleton('newsSettings') || {};
   const defaultNews = [
     { date: "Oct 15, 2026", title: "New Core Banking Software Update", desc: "We are migrating to a faster and more secure core banking system this weekend.", tag: "Technology" },
     { date: "Sep 28, 2026", title: "Annual General Body Meeting", desc: "The AGM for the financial year 2025-2026 will be held at the head office auditorium.", tag: "Event" },
@@ -14,15 +16,16 @@ export default function NewsPage() {
     : defaultNews;
 
   return (
-    <main className="min-h-screen pt-24 sm:pt-32 md:pt-40 pb-12 sm:pb-16 bg-background flex flex-col relative overflow-hidden">
-      <div className="container mx-auto px-5 sm:px-6 lg:px-8 relative z-10 mt-6 sm:mt-10 md:mt-12 max-w-4xl">
-        <div className="mb-6 sm:mb-8 md:mb-12">
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-3 sm:mb-4 md:mb-6">News & Updates</h1>
-          <div className="h-1 w-16 sm:w-20 bg-gradient-to-r from-primary via-gold to-accent rounded-full" />
-        </div>
+    <main className="min-h-screen bg-background flex flex-col relative overflow-hidden">
+      <PageHero
+        title="News & Updates"
+        subtitle="Stay informed with the latest from Karamuck Bank"
+        heroImage={settings.heroImage}
+      />
 
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8 relative z-10 py-8 sm:py-12 md:py-16 max-w-4xl">
         <div className="space-y-3 sm:space-y-4 md:space-y-6">
-          {renderNews.map((item, i) => (
+          {renderNews.map((item: any, i: number) => (
             <div
               key={item.title + i}
               className="glass-panel p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl md:rounded-2xl border-l-4 border-l-primary hover:border-l-gold transition-colors duration-300"

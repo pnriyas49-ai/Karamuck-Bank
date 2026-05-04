@@ -7,7 +7,7 @@ type Language = "EN" | "ML";
 interface LanguageContextType {
   language: Language;
   toggleLanguage: () => void;
-  t: (key: string) => string;
+  t: (key: string, ml?: string) => string;
 }
 
 const translations: Record<Language, Record<string, string>> = {
@@ -62,7 +62,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setLanguage((prev) => (prev === "EN" ? "ML" : "EN"));
   };
 
-  const t = (key: string) => {
+  const t = (key: string, ml?: string) => {
+    if (ml && language === 'ML') return ml;
     return translations[language][key] || key;
   };
 

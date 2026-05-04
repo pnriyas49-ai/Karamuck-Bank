@@ -1,6 +1,7 @@
 import React from "react";
 import { Target, Heart, Users, Award } from "lucide-react";
 import { getSingleton } from "@/lib/data-reader";
+import PageHero from "@/components/PageHero";
 
 export default function AboutPage() {
   const data = getSingleton('about') || {};
@@ -11,16 +12,14 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="min-h-screen pt-24 sm:pt-32 md:pt-40 pb-12 sm:pb-16 bg-background flex flex-col relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[200px] sm:w-[350px] md:w-[500px] h-[200px] sm:h-[350px] md:h-[500px] bg-primary/8 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[200px] sm:w-[300px] md:w-[400px] h-[200px] sm:h-[300px] md:h-[400px] bg-accent/8 rounded-full blur-[100px] pointer-events-none" />
-      
-      <div className="container mx-auto px-5 sm:px-6 lg:px-8 relative z-10 mt-6 sm:mt-10 md:mt-12">
-        <div className="mb-4 sm:mb-6">
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-foreground">About Us</h1>
-        </div>
-        <div className="h-1 w-16 sm:w-20 bg-gradient-to-r from-primary via-gold to-accent mb-6 sm:mb-8 md:mb-12 rounded-full" />
+    <main className="min-h-screen bg-background flex flex-col relative overflow-hidden">
+      <PageHero
+        title="Our Legacy"
+        subtitle="Karamuck Service Co-operative Bank"
+        heroImage={data.heroImage}
+      />
 
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8 relative z-10 py-8 sm:py-12 md:py-16">
         {/* Stats Row */}
         <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-12 md:mb-16">
           {stats.map((stat) => (

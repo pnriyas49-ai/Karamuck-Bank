@@ -14,6 +14,7 @@ export default async function ContactAdmin() {
         type="singleton"
         initialData={data}
         fields={[
+          { name: 'heroImage', label: 'Hero Banner Image', type: 'image' },
           { name: 'address', label: 'Address', type: 'textarea' },
           { name: 'phone1', label: 'Primary Phone', type: 'text' },
           { name: 'phone2', label: 'Secondary Phone', type: 'text' },

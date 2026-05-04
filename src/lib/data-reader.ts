@@ -4,6 +4,9 @@ import path from 'path';
 // Helper to read a directory of JSON files (collections)
 export function getCollection(collectionName: string) {
   try {
+    // Only use fs if we are in a Node.js environment
+    if (typeof fs.readdirSync !== 'function') return [];
+    
     const dirPath = path.join(process.cwd(), `src/content/${collectionName}`);
     if (!fs.existsSync(dirPath)) return [];
 
@@ -28,6 +31,9 @@ export function getCollection(collectionName: string) {
 // Helper to read a single JSON file (singletons)
 export function getSingleton(singletonName: string) {
   try {
+    // Only use fs if we are in a Node.js environment
+    if (typeof fs.readFileSync !== 'function') return null;
+
     const filePath = path.join(process.cwd(), `src/content/${singletonName}.json`);
     if (!fs.existsSync(filePath)) return null;
 

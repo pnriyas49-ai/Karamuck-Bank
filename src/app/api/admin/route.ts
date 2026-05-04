@@ -1,6 +1,6 @@
 import { NextRequest } from 'next/server';
 
-export const runtime = 'edge';
+
 
 // Uses Node runtime in dev for local fs, GitHub API in production (Cloudflare)
 export async function POST(req: NextRequest) {
